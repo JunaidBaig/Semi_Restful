@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Read (one)</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>TV SHOW {{ show.id }}</h1>
+        <a href="/shows">Go back</a>
+        <p> Title: {{ show.title }}</p>
+        <p> Network: {{ show.network}}</p>
+        <p>Release_date: {{ show.release_date }}</p>
+        <p>Description: {{show.description}}</p>
+        <a href="/shows/{{show.id}}/edit"> Edit</a>
+        <a href="/shows/{{show.id}}/delete"> Delete</a>
+    </div>
+</body>
+
+</html>

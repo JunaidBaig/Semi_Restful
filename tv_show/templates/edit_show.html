@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Edit Show {{ show.id }}</h2>
+        <a href="/shows">Go back</a>
+        <form action="/shows/{{show.id}}" class="form-group" method="POST">
+            {% csrf_token %}
+            <p>Title</p>
+            <input type="text" class="form-control" name="title" value="{{show.title}}">
+            <div class="row">
+                <div class="col">
+                    <p> Network</p>
+                    <input type="text" name="network" class="form-control" value="{{show.network}}">
+                </div>
+                <div class="col">
+                    <p>Release Date</p>
+                    <input type="text" name="release_date" class="form-control" value="{{show.release_date}}">
+                </div>
+            </div>
+            <p>Description</p>
+            <textarea type="text" name="description" class="form-control">{{show.description}}</textarea>
+            <input type="submit" name="update" value="update" class="btn-primary">
+        </form>
+        <a href="/shows/{{show.id}}">Go to Show</a>
+    </div>
+</body>
+
+</html>
